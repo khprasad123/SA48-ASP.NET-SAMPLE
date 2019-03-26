@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
+using MyApp1.Models;
 
 namespace MyApp1.Controllers
 {
@@ -10,13 +12,24 @@ namespace MyApp1.Controllers
     {
         public ActionResult Index()
         {
+            Debug.WriteLine("Debug okay!");
+            Demo one = new Demo();
+            one.name = "Hello";
+
+         
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+           
+            Data two = new Data();
+            two.Greeting = "Hello there";
+            two.From = "This is Home controller";
 
+            ViewData["msg1"] = two;
+
+            ViewBag.msg = two.Greeting + " " + two.From;
             return View();
         }
 
@@ -25,6 +38,15 @@ namespace MyApp1.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+       
+        public ActionResult GetDepartment(string Department, string course)
+        {
+            Debug.WriteLine(Department + " " + course);
+
+
+            return View("../Report/Department");
         }
     }
 }
