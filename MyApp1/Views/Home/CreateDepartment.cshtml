@@ -3,24 +3,21 @@
     ViewBag.Title = "Department";
 }
 
-<h2>Create Department</h2>
+<h2>Department</h2>
 
 @using MyApp1.Models
 @{
     if (IsPost)
     {
-        Entity temp = new Entity();
-        temp.course = Request["Course"];
-        temp.department = Request["Department"];
         <p>
             You have entered :<br />
-            Department : @temp.department <br />
-            Cource : @temp.course
+            Department : @Request["Department"] <br />
+            Cource : @Request["Course"]
         </p>
     }
     else
     {
-        <form method="post" action="CreateDepartment">
+        <form method="post" action="">
             <b>Department : </b><input type="text" name="Department" value="" /><br />
             <b>Cource : </b><input type="text" name="Course" value="" /><br />
             <input type="submit" value="Submit" />
