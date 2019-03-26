@@ -18,7 +18,7 @@ namespace MyApp1.Controllers
             return View();
         }
         // Answer for Question 3 Routing
-        [Route("Department/{name}/")]
+            [Route("Department/{name}/")]
         public ActionResult Department(string name)
         {
             Debug.WriteLine(name);

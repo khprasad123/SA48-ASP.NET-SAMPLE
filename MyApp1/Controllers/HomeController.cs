@@ -40,13 +40,28 @@ namespace MyApp1.Controllers
             return View();
         }
 
-       
+
         public ActionResult GetDepartment(string Department, string course)
         {
             Debug.WriteLine(Department + " " + course);
 
 
             return View("../Report/Department");
+        }
+        public ActionResult GetDepartment2(string Department, string course)
+        {
+            Debug.WriteLine(Department + "  inside  getDepartment2 " + course);
+
+
+            return View("../Report/Department");
+        }
+
+
+        public ActionResult CreateDepartment(Entity entity)
+        {
+            Debug.WriteLine(entity.department + "  inside  CreateDepartment      " + entity.course);
+
+            return View();
         }
     }
 }

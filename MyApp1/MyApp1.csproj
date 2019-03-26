@@ -176,6 +176,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Report\Staff.cshtml" />
     <Content Include="Views\Report\Department.cshtml" />
+    <Content Include="Views\Home\CreateDepartment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\File\" />

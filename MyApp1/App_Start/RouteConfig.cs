@@ -15,6 +15,11 @@ namespace MyApp1
    //------t
             routes.MapMvcAttributeRoutes();
 
+            ///for model binding ----1
+            routes.MapRoute(
+              name: "GetDepartment1",
+              url: "{controller}/{action}/{Department}/{course}"
+              );
 
             //for Routing Second Question--below
             routes.MapRoute(
@@ -22,18 +27,18 @@ namespace MyApp1
              url: "{controller}/{action}/{id}/{name}");
 
 
-            ///for model binding ----1
             routes.MapRoute(
-             name: "GetDepartment1",
-             url: "{controller}/GetDepartment/{Department}/{course}"
-             );
+              name: "GetDepartment3",
+              url: "{controller}/{action}"
+              );
 
+      
             //Routing First question
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "File", action = "Image", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
 
